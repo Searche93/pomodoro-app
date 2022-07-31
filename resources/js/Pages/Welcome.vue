@@ -1,6 +1,7 @@
 <script setup>
 import { Head, Link } from '@inertiajs/inertia-vue3';
 import DarkModeComponent from "../components/DarkModeComponent.vue";
+import TimerComponent from "../components/TimerComponent.vue";
 
 defineProps({
     canLogin: Boolean,
@@ -18,22 +19,21 @@ defineProps({
             <div class="fixed top-0 left-0 px-6 py-4">
                 <div class="flex">
                     <DarkModeComponent/>
-
                 </div>
             </div>
 
             <div class="fixed top-0 right-0 px-6 py-4">
                 <div v-if="canLogin">
-                    <Link v-if="$page.props.user" :href="route('dashboard')" class="text-sm text-gray-700 underline">
+                    <Link v-if="$page.props.user" :href="route('dashboard')" class="text-sm text-gray-700 dark:text-white">
                         Dashboard
                     </Link>
 
                     <template v-else>
-                        <Link :href="route('login')" class="text-sm text-gray-700 underline dark:text-white">
+                        <Link :href="route('login')" class="text-sm text-gray-700 dark:text-white">
                             Log in
                         </Link>
 
-                        <Link v-if="canRegister" :href="route('register')" class="ml-4 text-sm text-gray-700 underline dark:text-white">
+                        <Link v-if="canRegister" :href="route('register')" class="ml-4 text-sm text-gray-700 dark:text-white">
                             Register
                         </Link>
                     </template>
@@ -42,7 +42,7 @@ defineProps({
         </div>
 
         <div class="relative max-w-6xl mx-auto sm:px-6 lg:px-8">
-            [TIMER]
+            <TimerComponent/>
         </div>
     </div>
 </template>
