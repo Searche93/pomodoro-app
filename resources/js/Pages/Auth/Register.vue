@@ -1,7 +1,6 @@
 <script setup>
 import { Head, Link, useForm } from '@inertiajs/inertia-vue3';
 import JetAuthenticationCard from '@/Jetstream/AuthenticationCard.vue';
-import JetAuthenticationCardLogo from '@/Jetstream/AuthenticationCardLogo.vue';
 import JetButton from '@/Jetstream/Button.vue';
 import JetInput from '@/Jetstream/Input.vue';
 import JetCheckbox from '@/Jetstream/Checkbox.vue';
@@ -27,12 +26,7 @@ const submit = () => {
     <Head title="Register" />
 
     <JetAuthenticationCard>
-        <template #logo>
-            <JetAuthenticationCardLogo />
-        </template>
-
         <JetValidationErrors class="mb-4" />
-
         <form @submit.prevent="submit">
             <div>
                 <JetLabel for="name" value="Name" />
